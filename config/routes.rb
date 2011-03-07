@@ -1,3 +1,3 @@
 Awesomeserver::Application.routes.draw do
-  resources :compositions
+  resources :compositions, :users
 end
