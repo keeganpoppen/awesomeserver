@@ -6,13 +6,14 @@ class UsersController < ApplicationController
 
 		obj = ActiveSupport::JSON.decode(request.body) 
 
+        logger.debug obj
+
         @u.udid = obj['udid']
         @u.name = obj['name'] 
 
         if @u.save
-            render :json => {:success => true}
-        else
             render :json => {:success => true, :id => @u.id}
+        else
             render :json => {:success => false}
         end
     end
