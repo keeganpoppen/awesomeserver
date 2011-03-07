@@ -4,8 +4,10 @@ class UsersController < ApplicationController
     def create
         @u = User.new
 
-        @u.udid = params[:udid]
-        @u.name = params[:name]
+		obj = ActiveSupport::JSON.decode(request.body) 
+
+        @u.udid = obj['udid']
+        @u.name = obj['name'] 
 
         if @u.save
             render :json => {:success => true}
