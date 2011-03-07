@@ -3,9 +3,6 @@ class CompositionsController < ApplicationController
 
   def create
 		@comp = Composition.new
-		#@comp.name = params[:name]
-		#@comp.user = params[:user_id]
-		#@comp.data = params[:data]
 
 		obj = ActiveSupport::JSON.decode(request.body) 
 
