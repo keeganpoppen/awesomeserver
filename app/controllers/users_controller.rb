@@ -6,8 +6,6 @@ class UsersController < ApplicationController
 
 		obj = ActiveSupport::JSON.decode(request.body) 
 
-        logger.debug obj
-
         @u.udid = obj['udid']
         @u.name = obj['name'] 
 
